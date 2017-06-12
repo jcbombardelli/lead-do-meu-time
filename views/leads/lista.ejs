@@ -52,15 +52,16 @@
                 <td>Setor</td>
                 <td>Idade</td>
             </tr>
-            <tr>
-                <%for(var i=0; i < lista.length; i++) {%>
+            
+            <%for(var i=0; i < lista.length; i++) {%>
+                <tr>
                     <td><%= lista[i].cpf %></td>
                     <td><%= lista[i].email %></td>
                     <td><%= lista[i].valor %></td>
                     <td><%= lista[i].setor %></td>
                     <td><%= lista[i].idade %></td>
-                <%}%>
-            </tr>
+                </tr>
+            <%}%>         
         </table>
     </div>
 </body>
