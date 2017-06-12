@@ -1,0 +1,31 @@
+<html>
+    
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <body>
+        <button type="button" class="btn btn-danger">Alerta</button>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Panel heading</div>
+            <table class="table">
+                <tr>
+                    <td>CPF</td>
+                    <td>Email</td>
+                    <td>Valor</td>
+                    <td>Setor</td>
+                    <td>Idade</td>
+                </tr>
+                <tr>
+                    <%for(var i=0; i < lista.length; i++) {%>
+                        <td><%= lista[i].cpf %></td>
+                        <td><%= lista[i].email %></td>
+                        <td><%= lista[i].valor %></td>
+                        <td><%= lista[i].setor %></td>
+                        <td><%= lista[i].idade %></td>
+                    <%}%>       
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
+
