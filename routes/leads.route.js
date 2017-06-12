@@ -10,7 +10,7 @@ module.exports = function (app, _db) {
             if (err) {
                 throw err;
             }
-            res.render("leads/lista", { lista: result })
+            res.render("leads/lista", { lista: result})
         });
 
 

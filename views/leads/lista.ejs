@@ -1,31 +1,67 @@
 <html>
-    
+
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/leadslista.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
-    <body>
-        <button type="button" class="btn btn-danger">Alerta</button>
+<body style="padding:5%">
 
-        <div class="panel panel-default">
-            <div class="panel-heading">Panel heading</div>
-            <table class="table">
-                <tr>
-                    <td>CPF</td>
-                    <td>Email</td>
-                    <td>Valor</td>
-                    <td>Setor</td>
-                    <td>Idade</td>
-                </tr>
-                <tr>
-                    <%for(var i=0; i < lista.length; i++) {%>
-                        <td><%= lista[i].cpf %></td>
-                        <td><%= lista[i].email %></td>
-                        <td><%= lista[i].valor %></td>
-                        <td><%= lista[i].setor %></td>
-                        <td><%= lista[i].idade %></td>
-                    <%}%>       
-                </tr>
-            </table>
-        </div>
-    </body>
+
+
+
+    <canvas class="line-chart"> </canvas>
+
+    <script>
+        var ctx = document.getElementsByClassName("line-chart");
+        var n =document.getElementById("")
+
+        var chartGraph = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["0 ~ 17", "18 ~ 25", "26 ~ 35", "40+"],
+                datasets: [
+                    {
+                        label: "Valor dos Ingressos",
+                        data: [0, 6, 10, 7, 12],
+                        borderColor: "rgb(77,208,225)",
+                        backgroundColor : "rgb(77,208,225)"
+                    }, {
+                        label: "Idade dos Torcedores",
+                        data: [0, 12, 37, 12],
+                        borderColor: "rgb(77,182,172)",
+                        backgroundColor : "rgb(77,182,172)"
+                    }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    fontSize: 60,
+                    text: "Grafico Leads"
+                }
+            }
+        });
+    </script>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Leads capturados pelo aplicativo</div>
+        <table class="table">
+            <tr>
+                <td>CPF</td>
+                <td>Email</td>
+                <td>Valor</td>
+                <td>Setor</td>
+                <td>Idade</td>
+            </tr>
+            <tr>
+                <%for(var i=0; i < lista.length; i++) {%>
+                    <td><%= lista[i].cpf %></td>
+                    <td><%= lista[i].email %></td>
+                    <td><%= lista[i].valor %></td>
+                    <td><%= lista[i].setor %></td>
+                    <td><%= lista[i].idade %></td>
+                <%}%>
+            </tr>
+        </table>
+    </div>
+</body>
 </html>
-
